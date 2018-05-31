@@ -14,13 +14,12 @@ class SearchBar extends Component{
     // This is a method called render, it's a little bit different of normal javascript methods
     render(){
         //This input, when change, will call our method onInputChange
-        return <input onChange={this.onInputChange} />;
-    }
-
-    //We will create another method, to be called when the input change
-    onInputChange(event){ //This method name could be quandoOInputMudar... Also the attribute
-        // console.log(event.target.value); //Show in browser console the value
-        this.setState({ term: event.target.value });
+        return (
+            <div>
+                <input onChange={event => this.setState({term: event.target.value}) } />
+                Value of the input: {this.state.term}
+            </div>
+        );
     }
 }
 
