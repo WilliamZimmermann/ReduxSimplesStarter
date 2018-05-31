@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom';
 
 // Customized components
 import SearchBar from './components/search_bar';
-
-// Youtube API Key
-const API_KEY = 'AIzaSyCnhstiigCk-NDfJOEFAce-vBJQ95YX5iE';
+import API_KEY from './config.js';
 
 // Create a new component. This component should produce some HTML
 const App = function(){
