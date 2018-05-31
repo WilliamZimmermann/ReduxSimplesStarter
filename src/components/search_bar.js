@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 
 //We take all functionalities that React.Component class give us
 class SearchBar extends Component{
+    constructor(props){
+        // As Component already have his own constructor, we must to call super
+        super(props);
+        // We will record a object called state ever time that we call a funcion
+        this.state = {
+            term: ''
+        }; //You can set the state using the native method setState()...
+    }
+
     // This is a method called render, it's a little bit different of normal javascript methods
     render(){
         //This input, when change, will call our method onInputChange
@@ -10,7 +19,8 @@ class SearchBar extends Component{
 
     //We will create another method, to be called when the input change
     onInputChange(event){ //This method name could be quandoOInputMudar... Also the attribute
-        console.log(event.target.value); //Show in browser console the value
+        // console.log(event.target.value); //Show in browser console the value
+        this.setState({ term: event.target.value });
     }
 }
 
