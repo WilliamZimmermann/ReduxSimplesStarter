@@ -1,6 +1,11 @@
 import React from 'react';
 
 const VideoDetail = ({video})=>{
+    // As JavaScript is Assyncronous, it can be that components are not charged yet
+    // if this happens, will be showed the loading message
+    if (!video){
+        return <div>Loading...</div>;
+    }
     // It gets the video data and url and will pass it for our iframe
     const videoId = video.id.videoId;
     const url = 'https://www.youtube.com/embed/' + videoId;
